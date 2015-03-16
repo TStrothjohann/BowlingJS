@@ -30,7 +30,12 @@ describe("BowlingFrame", function() {
     expect(frame.strike).toBe(true)
   });
 
-  
+  it("knows it's score", function() {
+    frame.saveRoll(8); frame.saveRoll(2);
+    frame.bonus = 8
+    frame.frameScore();
+    expect(frame.score).toEqual(18);
+  });
 
 
 

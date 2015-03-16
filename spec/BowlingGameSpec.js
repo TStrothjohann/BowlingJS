@@ -4,7 +4,6 @@ describe("Bowling Game", function() {
 
   var setupGame = function(){
     game = new BowlingGame();
-    //frame = jasmine.createSpyObj('frame', ['rolls', 'bonus', 'saveRoll']);
     frame = new BowlingFrame();
     frame1 = new BowlingFrame();
     frame2 = new BowlingFrame();
@@ -29,7 +28,6 @@ describe("Bowling Game", function() {
 
     it("can take a roll", function() {
       game.roll(3);
-      // expect(frame.saveRoll).toHaveBeenCalledWith(3);
       expect(game.currentFrame).toEqual(fakeframe)
     });
 
@@ -60,7 +58,7 @@ describe("Bowling Game", function() {
       game.roll(10);
       game.roll(4); game.roll(2);
       game.roll(5); game.roll(5);
-      game.roll(4); game.roll(4); //game is actually over before the last roll
+      game.roll(4); game.roll(4);
       expect(game.isOver).toEqual(true);
     });
 
@@ -136,6 +134,30 @@ describe("Bowling Game", function() {
       game.roll(4); game.roll(2);
       game.roll(5); game.roll(5);
       expect(game.scoreCard[1].bonus).toEqual(18);
+    });
+
+    it("can calculate the current score", function(){
+      game.roll(7); game.roll(2);
+      game.roll(10);
+      game.roll(10);
+      game.roll(8); game.roll(1);
+      expect(game.OverAllScore).toEqual(65);
+    });
+
+    it("Perfect game.", function(){
+      game.roll(10);
+      game.roll(10);
+      game.roll(10);
+      game.roll(10);
+      game.roll(10);
+      game.roll(10);
+      game.roll(10);
+      game.roll(10);
+      game.roll(10);
+      game.roll(10);
+      game.roll(10);
+      game.roll(10);
+      expect(game.OverAllScore).toEqual(300);
     });
 
   });
