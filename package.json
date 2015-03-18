@@ -1,8 +1,8 @@
 {
   "name": "bowling-challenge",
   "version": "1.0.0",
-  "description": "bowling-challenge",
-  "main": "server.js",
+  "description": "A Bowling score card.",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,19 +10,14 @@
     "type": "git",
     "url": "https://github.com/TStrothjohann/BowlingJS.git"
   },
-  "keywords": [
-    "node",
-    "js",
-    "bowling",
-    "makers"
-  ],
-  "author": "Thomas",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/TStrothjohann/BowlingJS/issues"
   },
   "homepage": "https://github.com/TStrothjohann/BowlingJS",
   "dependencies": {
+    "ejs": "^2.3.1",
     "express": "^4.12.3"
   }
 }

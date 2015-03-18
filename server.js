@@ -1,14 +1,18 @@
-var server = require('express')();
-var http = require('http').createServer(server);
+var express = require('express');
+var server = express();
+var http = require('http').Server(server);
 
-server.set('views', __dirname + '/views');
-server.engine('html', require('ejs').renderFile);
+server.set('view engine', 'ejs');
+server.use(express.static(__dirname + '/public'));
 
-server.get('/', function(request, response) {
-  response.render('index.html')
+server.get('/', function(request, response){
+  response.render('index');
 });
 
+var port = process.env.PORT || 3000;
 
-http.listen(3000, function(){
-  console.log('Listening on port 3000');
+http.listen(port, function(){
+  console.log("Listening on port " + port);
 });
+
+module.exports = http;
