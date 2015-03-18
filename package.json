@@ -1,0 +1,28 @@
+{
+  "name": "bowling-challenge",
+  "version": "1.0.0",
+  "description": "bowling-challenge",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TStrothjohann/BowlingJS.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "bowling",
+    "makers"
+  ],
+  "author": "Thomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TStrothjohann/BowlingJS/issues"
+  },
+  "homepage": "https://github.com/TStrothjohann/BowlingJS",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
