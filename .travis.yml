@@ -5,6 +5,7 @@ before_install:
 - "npm install grunt-cli"
 - "npm install grunt"
 - "npm install grunt-contrib-jasmine"
+- "npm install -g codeclimate-test-reporter"
 
 script:
 - "grunt"
