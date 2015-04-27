@@ -9,7 +9,7 @@ before_install:
 script:
 - "grunt"
 after_script:
-  - codeclimate < ./lcov.info
+  - codeclimate < lcov.info
 
 addons:
   code_climate:
