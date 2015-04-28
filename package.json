@@ -29,6 +29,7 @@
     "grunt-template-jasmine-istanbul": "^0.3.3",
     "install": "^0.1.8",
     "karma": "^0.12.31",
-    "npm": "^2.8.4"
+    "npm": "^2.8.4",
+    "protractor": "^2.0.0"
   }
 }

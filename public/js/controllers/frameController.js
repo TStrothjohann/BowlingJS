@@ -1,7 +1,6 @@
 frameController = function(BowlingGame, BowlingFrame) {
-  var game;
-  var setupGame = function(){
-    
+
+  setupGame = function(){
     game = new BowlingGame();
     frame = new BowlingFrame();
     frame1 = new BowlingFrame();
