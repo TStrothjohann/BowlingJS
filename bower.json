@@ -1,0 +1,27 @@
+{
+  "name": "BowlingJS",
+  "version": "0.0.0",
+  "homepage": "https://github.com/TStrothjohann/BowlingJS",
+  "authors": [
+    "Thomas Strothjohann <thomas@strothjohann.net>"
+  ],
+  "description": "A Bowling Score Card",
+  "keywords": [
+    "bowling",
+    "angular",
+    "js"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.15",
+    "angular-mocks": "~1.3.15",
+    "materialize": "~0.96.1"
+  }
+}

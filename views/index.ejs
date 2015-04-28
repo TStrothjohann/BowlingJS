@@ -8,14 +8,43 @@
     <script src="js/models/BowlingFrame.js"></script>
     <script src="js/models/BowlingGame.js"></script>
     <script src="js/controllers/frameController.js"></script>
+    <link rel="stylesheet" type="text/css" href="materialize/dist/css/materialize.css">
     
   </head>
   <body ng-app="bowling">
-    <h1>Bowling Score Calculator</h1>
-    <div ng-controller="frameController as game">
-       
-    </div>
+    <div class="container">
+      <div class="row">
+        <h1>Bowling Score Calculator</h1>
+      </div>
+      <div class="row">
+        <div ng-controller="frameController as game">
+           <table class="hoverable">
+             <thead>
+               <tr>
+                 <th>Round</th>
+                 <th>First Bowl</th>
+                 <th>Second Bowl</th>
+                 <th>Count</th>
+               </tr>
+             </thead>
+             <tbody ng-repeat="frame in game.scoreCard">
+               <tr class="frame">
+                 <td>{{$index + 1}}</td>
+               </tr>
+               <tr>
+                 <td>{{frame.rolls[0]}}</td>
+               </tr>
+                <tr>
+                 <td>{{frame.rolls[1]}}</td>
+               </tr>
+                <tr>
+                 <td>{{frame.score}}</td>
+               </tr>
+             </tbody>
+           </table>
 
-
+        </div>
+      </div> <!-- End of calculator row -->
+    </div> <!-- End of container -->
   </body>
 </html>

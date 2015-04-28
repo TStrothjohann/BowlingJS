@@ -1,4 +1,5 @@
 frameController = function(BowlingGame, BowlingFrame) {
+  this.scoreCard = game.scoreCard
 
   setupGame = function(){
     game = new BowlingGame();
@@ -19,9 +20,7 @@ frameController = function(BowlingGame, BowlingFrame) {
   };
 
   setupGame();
-  game.roll(3);
-  game.roll(3);
-  game.roll(3);
+   
   console.log(game.scoreCard)
 };
 

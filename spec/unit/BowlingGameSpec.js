@@ -25,7 +25,7 @@ describe("Bowling Game", function() {
     bonusFrame = new BowlingFrame();
     frames = [frame, frame1, frame2, frame3, frame4, frame5, frame6, frame7, frame8, frame9];
     fakeframe = new BowlingFrame();
-    fakeframe.rolls = [3]
+    fakeframe.saveRoll(3);
     game.hold(frames);
     game.holdBonusFrame(bonusFrame);
   };

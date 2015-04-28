@@ -5,10 +5,12 @@ var frameWrapper = function(){
     this.strike = false;
     this.spare = false;
     this.score = 0;
+    this.leftOver = 10;
   };
 
   BowlingFrame.prototype.saveRoll = function (pins) {
     this.rolls.push(pins);
+    this.leftOver -= pins;
     this.special()
   };
 

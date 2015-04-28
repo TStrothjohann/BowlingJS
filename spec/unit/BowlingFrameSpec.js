@@ -41,5 +41,11 @@ describe("BowlingFrame", function() {
     expect(frame.score).toEqual(18);
   });
 
+  it("knows how many pins are left", function(){
+    frame.saveRoll(3);
+    frame.saveRoll(5);
+    expect(frame.leftOver).toEqual(2);
+  });
+
 
 });
