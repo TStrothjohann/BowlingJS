@@ -1,28 +1,29 @@
-BowlingGame = function(){
-  this.currentFrame;
-  this.scoreCard = [];
-  this.freshFrames = [];
-  this.bonusFrame = [];
-  this.isOver = false;
-  this.OverAllScore = 0;
-};
-
-BowlingGame.prototype.roll = function(pins) {
-  if(this.isFinal()){this.rollFinal(pins)}
-  else {
-    if(this.currentFrame == undefined){
-      this.nextFrame();
-      this.currentFrame.saveRoll(pins);
-      if(this.isStrike(pins)){this.finishFrame()};
-    }else{
-      this.currentFrame.saveRoll(pins);
-      this.finishFrame();
-    };
-    this.checkIfOver();
+var wrapper = function(){
+  var BowlingGame = function(){
+    this.currentFrame;
+    this.scoreCard = [];
+    this.freshFrames = [];
+    this.bonusFrame = [];
+    this.isOver = false;
+    this.OverAllScore = 0;
   };
-};
 
-BowlingGame.prototype.finishFrame = function() {
+  BowlingGame.prototype.roll = function(pins) {
+    if(this.isFinal()){this.rollFinal(pins)}
+    else {
+      if(this.currentFrame == undefined){
+        this.nextFrame();
+        this.currentFrame.saveRoll(pins);
+        if(this.isStrike(pins)){this.finishFrame()};
+      }else{
+        this.currentFrame.saveRoll(pins);
+        this.finishFrame();
+      };
+      this.checkIfOver();
+    };
+  };
+
+  BowlingGame.prototype.finishFrame = function() {
   this.scoreCard.push(this.currentFrame)
   this.currentFrame = undefined;
   this.bonusCalculator();
@@ -116,3 +117,13 @@ framecount8 = this.scoreCard[8] && this.scoreCard[8].frameScore() || 0
 framecount9 = this.scoreCard[9] && this.scoreCard[9].frameScore() || 0
   this.OverAllScore = framecount0 + framecount1 + framecount2 + framecount3 + framecount4 + framecount5 + framecount6 + framecount7 + framecount8 + framecount9
 };
+
+
+
+  return BowlingGame;
+};
+
+
+angular
+  .module('bowling')
+  .factory('BowlingGame', wrapper);

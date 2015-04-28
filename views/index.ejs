@@ -5,22 +5,15 @@
     <link rel="stylesheet" href="/css/style.css" charset="utf-8">
     <script src="angular/angular.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/models/BowlingFrame.js"></script>
+    <script src="js/models/BowlingGame.js"></script>
     <script src="js/controllers/frameController.js"></script>
     
   </head>
   <body ng-app="bowling">
     <h1>Bowling Score Calculator</h1>
     <div ng-controller="frameController as game">
-        <table>
-            <tr>
-              <td></td>
-            </tr>
-            <tr>
-            <td ng-repeat="frame in game.scoreCard">
-            Frame: [{{$index + 1}}] <p>{{ frame }}</p>
-            </td>
-          </tr>
-        </table>
+       
     </div>
 
 
