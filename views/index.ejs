@@ -8,6 +8,7 @@
     <script src="js/models/BowlingFrame.js"></script>
     <script src="js/models/BowlingGame.js"></script>
     <script src="js/controllers/frameController.js"></script>
+    <script src="js/helpers/rangeFilter.js"></script>
     <link rel="stylesheet" type="text/css" href="materialize/dist/css/materialize.css">
     
   </head>
@@ -18,6 +19,11 @@
       </div>
       <div class="row">
         <div ng-controller="frameController as game">
+          <div id="choose-pins">
+            <ul ng-repeat="pin in [] | range:game.currentlyLeft">
+              <li class="pin">{{pin + 1}}</li>
+            </ul>
+          </div>
            <table class="hoverable">
              <thead>
                <tr>

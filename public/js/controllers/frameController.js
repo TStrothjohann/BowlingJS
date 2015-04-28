@@ -1,5 +1,5 @@
 frameController = function(BowlingGame, BowlingFrame) {
-  this.scoreCard = game.scoreCard
+  
 
   setupGame = function(){
     game = new BowlingGame();
@@ -20,8 +20,9 @@ frameController = function(BowlingGame, BowlingFrame) {
   };
 
   setupGame();
-   
-  console.log(game.scoreCard)
+  game.roll(0);
+  this.scoreCard = game.scoreCard
+  this.currentlyLeft = game.currentFrame.leftOver
 };
 
 angular
