@@ -1,6 +1,14 @@
+var BowlingGame, BowlingFrame, game, frame;
+
 describe("Bowling Game", function() {
-  var game;
-  var frame;
+ beforeEach(module('bowling'));
+
+  beforeEach(function(){
+    inject(function($injector) {
+      BowlingFrame = $injector.get('BowlingFrame');
+      BowlingGame = $injector.get('BowlingGame');
+    });
+  });
 
   var setupGame = function(){
     game = new BowlingGame();

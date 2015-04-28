@@ -1,8 +1,12 @@
+var BowlingFrame, frame;
+
 describe("BowlingFrame", function() {
-
-  var frame;
-
+  beforeEach(module('bowling'));
+  
   beforeEach(function(){
+    inject(function($injector) {
+      BowlingFrame = $injector.get('BowlingFrame');
+    });
     frame = new BowlingFrame();
   });
 
@@ -36,7 +40,6 @@ describe("BowlingFrame", function() {
     frame.frameScore();
     expect(frame.score).toEqual(18);
   });
-
 
 
 });

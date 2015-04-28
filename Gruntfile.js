@@ -2,9 +2,16 @@ module.exports=function(grunt) {
   grunt.initConfig({
     jasmine: {
       coverage: {
-        src:'models/*.js',
+        src: [
+          'public/js/app.js',
+          'public/js/models/*.js'
+          ],
         options: {
-          specs:'spec/*.js',
+          specs:'spec/unit/*.js',
+          vendor: [
+                        'bower_components/angular/angular.js',
+                        'bower_components/angular-mocks/angular-mocks.js'
+                    ],
           template: require('grunt-template-jasmine-istanbul'),
           templateOptions: {
             coverage: 'coverage/coverage.json',
