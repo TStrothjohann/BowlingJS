@@ -3,15 +3,16 @@ module.exports=function(grunt) {
     jasmine: {
       coverage: {
         src: [
-          'bower_components/angular/angular.js',
-          'bower_components/angular-mocks/angular-mocks.js',
           'public/js/app.js',
           'public/js/models/*.js'
           ],
 
         options: {
           specs:'spec/unit/*.js',
-                  
+          vendor: [
+            'bower_components/angular/angular.js',
+            'bower_components/angular-mocks/angular-mocks.js'
+                ],
           template: require('grunt-template-jasmine-istanbul'),
           templateOptions: {
             coverage: 'coverage/coverage.json',
