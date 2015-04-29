@@ -1,4 +1,4 @@
-frameController = function(BowlingGame, BowlingFrame) {
+frameController = function(BowlingGame, BowlingFrame, $scope) {
   
 
   setupGame = function(){
@@ -22,9 +22,13 @@ frameController = function(BowlingGame, BowlingFrame) {
   setupGame();
   
   this.scoreCard = game.scoreCard
-  this.currentlyLeft = game.currentFrame ? game.currentFrame.leftOver : 10;
+  $scope.OverAllScore = 0;
+  $scope.currentlyLeft = 10;
+
   this.roll = function(pins){
     game.roll(pins);
+    $scope.currentlyLeft = game.currentFrame ? game.currentFrame.leftOver : 10;
+    $scope.OverAllScore = game.OverAllScore
   }
   
 };

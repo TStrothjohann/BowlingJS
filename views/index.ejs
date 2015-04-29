@@ -12,15 +12,16 @@
     <link rel="stylesheet" type="text/css" href="materialize/dist/css/materialize.css">
     
   </head>
-  <body ng-app="bowling">
+  <body ng-app="bowling" ng-controller="frameController as game">
     <div class="container">
       <div class="row">
         <h1>Bowling Score Calculator</h1>
+        <h2 id="current-score">Current Score: {{ OverAllScore }}</h2>
       </div>
       <div class="row">
-        <div ng-controller="frameController as game">
+        
           <div id="choose-pins">
-            <ul ng-repeat="pin in [] | range:game.currentlyLeft">
+            <ul ng-repeat="pin in [] | range:currentlyLeft">
               <li><a class="pin" href="#" ng-click="game.roll(pin + 1)">{{pin + 1}}</a></li>
             </ul>
           </div>
@@ -43,7 +44,7 @@
              </tbody>
            </table>
 
-        </div>
+        
       </div> <!-- End of calculator row -->
     </div> <!-- End of container -->
   </body>

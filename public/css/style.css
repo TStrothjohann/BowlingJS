@@ -2,12 +2,3 @@ h1 {
   color: orange;
   text-align: center;
 }
-
-td {
-  padding: 2em;
-  background-color: grey;
-}
-
-td.frame {
-  font-weight: bold;
-}
