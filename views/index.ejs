@@ -17,12 +17,14 @@
       <div class="row">
         <h1>Bowling Score Calculator</h1>
         <h2 id="current-score">Current Score: {{ OverAllScore }}</h2>
+        <h3 ng-if="isOver">Last Frame!</h3>
       </div>
       <div class="row">
-        
-          <div id="choose-pins">
+       
+          <div id="choose-pins" class="row">
+            <p>How many pins have fallen?</p>
             <ul ng-repeat="pin in [] | range:currentlyLeft">
-              <li><a class="pin" href="#" ng-click="game.roll(pin + 1)">{{pin + 1}}</a></li>
+              <li class="col s1.5"><a class="pin" href="#" ng-click="game.roll(pin + 1)">{{pin + 1}}</a></li>
             </ul>
           </div>
            <table class="hoverable">
@@ -35,7 +37,7 @@
                </tr>
              </thead>
              <tbody ng-repeat="frame in game.scoreCard">
-               <tr class="frame">
+               <tr class="frame" ng-class="{strike: frame.strike, spare: frame.spare}">
                  <td>{{$index + 1}}</td>
                  <td class="first-roll">{{frame.rolls[0]}}</td>
                  <td class="second-roll">{{frame.rolls[1]}}</td>

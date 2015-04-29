@@ -2,3 +2,12 @@ h1 {
   color: orange;
   text-align: center;
 }
+
+
+.strike {
+  background-color: #a5d6a7;
+}
+
+.spare {
+  background-color: #e6ee9c;
+}

@@ -34,7 +34,7 @@ BowlingGame.prototype.hold = function (frame) {
   if(Array.isArray(frame))
     {for(i=0; i<frame.length; i++){this.freshFrames.push(frames[i])};
   }else{
-  this.freshFrames.push(frame);
+    this.freshFrames.push(frame);
   };
 };
 

@@ -22,13 +22,16 @@ frameController = function(BowlingGame, BowlingFrame, $scope) {
   setupGame();
   
   this.scoreCard = game.scoreCard
-  $scope.OverAllScore = 0;
   $scope.currentlyLeft = 10;
+  $scope.OverAllScore = 0;
+
+  
 
   this.roll = function(pins){
     game.roll(pins);
     $scope.currentlyLeft = game.currentFrame ? game.currentFrame.leftOver : 10;
     $scope.OverAllScore = game.OverAllScore
+    $scope.isOver = game.isOver;
   }
   
 };
