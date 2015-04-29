@@ -20,9 +20,13 @@ frameController = function(BowlingGame, BowlingFrame) {
   };
 
   setupGame();
-  game.roll(0);
+  
   this.scoreCard = game.scoreCard
-  this.currentlyLeft = game.currentFrame.leftOver
+  this.currentlyLeft = game.currentFrame ? game.currentFrame.leftOver : 10;
+  this.roll = function(pins){
+    game.roll(pins);
+  }
+  
 };
 
 angular

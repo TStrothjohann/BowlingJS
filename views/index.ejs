@@ -21,7 +21,7 @@
         <div ng-controller="frameController as game">
           <div id="choose-pins">
             <ul ng-repeat="pin in [] | range:game.currentlyLeft">
-              <li class="pin">{{pin + 1}}</li>
+              <li><a class="pin" href="#" ng-click="game.roll(pin + 1)">{{pin + 1}}</a></li>
             </ul>
           </div>
            <table class="hoverable">
@@ -36,15 +36,9 @@
              <tbody ng-repeat="frame in game.scoreCard">
                <tr class="frame">
                  <td>{{$index + 1}}</td>
-               </tr>
-               <tr>
-                 <td>{{frame.rolls[0]}}</td>
-               </tr>
-                <tr>
-                 <td>{{frame.rolls[1]}}</td>
-               </tr>
-                <tr>
-                 <td>{{frame.score}}</td>
+                 <td class="first-roll">{{frame.rolls[0]}}</td>
+                 <td class="second-roll">{{frame.rolls[1]}}</td>
+                 <td class="frame-score">{{frame.score}}</td>
                </tr>
              </tbody>
            </table>
