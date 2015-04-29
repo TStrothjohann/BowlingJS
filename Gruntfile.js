@@ -4,7 +4,8 @@ module.exports=function(grunt) {
       coverage: {
         src: [
           'public/js/app.js',
-          'public/js/models/*.js'
+          'public/js/models/*.js',
+          'public/js/helpers/*.js'
           ],
 
         options: {
