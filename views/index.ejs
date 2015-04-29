@@ -21,10 +21,10 @@
       </div>
       <div class="row">
        
-          <div id="choose-pins" class="row">
+          <div id="choose-pins" class="row" >
             <p>How many pins have fallen?</p>
             <ul ng-repeat="pin in [] | range:currentlyLeft">
-              <li class="col s1.5"><a class="pin" href="#" ng-click="game.roll(pin + 1)">{{pin + 1}}</a></li>
+              <li class="col s1.5"><a class="pin" href="#" ng-click="game.roll(pin)">{{pin}}</a></li>
             </ul>
           </div>
            <table class="hoverable">
@@ -36,7 +36,7 @@
                  <th>Count</th>
                </tr>
              </thead>
-             <tbody ng-repeat="frame in game.scoreCard">
+             <tbody ng-repeat="frame in scoreCard">
                <tr class="frame" ng-class="{strike: frame.strike, spare: frame.spare}">
                  <td>{{$index + 1}}</td>
                  <td class="first-roll">{{frame.rolls[0]}}</td>
@@ -45,7 +45,8 @@
                </tr>
              </tbody>
            </table>
-
+           <div class="section"></div>
+           <button class="btn" ng-click="game.newGame()">New Game</button>
         
       </div> <!-- End of calculator row -->
     </div> <!-- End of container -->
