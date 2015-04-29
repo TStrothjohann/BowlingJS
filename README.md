@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/TStrothjohann/BowlingJS.svg?branch=master)](https://travis-ci.org/TStrothjohann/BowlingJS)
+[![Code Climate](https://codeclimate.com/github/TStrothjohann/BowlingJS/badges/gpa.svg)](https://codeclimate.com/github/TStrothjohann/BowlingJS)
+[![Test Coverage](https://codeclimate.com/github/TStrothjohann/BowlingJS/badges/coverage.svg)](https://codeclimate.com/github/TStrothjohann/BowlingJS)
+
 A Bowling score card.
 
 
