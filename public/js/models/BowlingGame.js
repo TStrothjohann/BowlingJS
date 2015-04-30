@@ -32,7 +32,7 @@ var wrapper = function(){
 
 BowlingGame.prototype.hold = function (frame) {
   if(Array.isArray(frame))
-    {for(i=0; i<frame.length; i++){this.freshFrames.push(frames[i])};
+    {for(i=0; i<frame.length; i++){this.freshFrames.push(frame[i])};
   }else{
     this.freshFrames.push(frame);
   };

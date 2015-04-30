@@ -1,6 +1,6 @@
-frameController = function(BowlingGame, BowlingFrame, $scope, setupGame) {
+frameController = function( $scope, setupGame) {
   
-  setupGame();
+  var game = setupGame;
   
   $scope.scoreCard = game.scoreCard;
   $scope.currentlyLeft = 11;

@@ -35,4 +35,4 @@ var frameWrapper = function(){
 
 angular
   .module('bowling')
-  .service('BowlingFrame', frameWrapper)
+  .factory('BowlingFrame', frameWrapper)

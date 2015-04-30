@@ -1,14 +1,17 @@
 var wrapper = function(BowlingGame, BowlingFrame) {
+  var game;
   var setupGame = function(){
-    frames = [];
+    var frames = [];
     game = new BowlingGame();
     for (var i = 10; i >= 0; i--) {      
       frames.push(new BowlingFrame());
     };
     game.hold(frames);
     game.holdBonusFrame(new BowlingFrame());
+
   };
-  return setupGame
+  setupGame();
+  return game
 };
 
 angular
