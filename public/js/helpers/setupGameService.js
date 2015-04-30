@@ -3,7 +3,7 @@ var wrapper = function(BowlingGame, BowlingFrame) {
   var setupGame = function(){
     var frames = [];
     game = new BowlingGame();
-    for (var i = 10; i >= 0; i--) {      
+    for (var i = 9; i >= 0; i--) {      
       frames.push(new BowlingFrame());
     };
     game.hold(frames);
