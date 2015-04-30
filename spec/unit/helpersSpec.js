@@ -32,6 +32,13 @@ describe("setupGame Service", function() {
     expect(game.freshFrames.length).toEqual(10)
     expect(game.bonusFrame.length).toEqual(1)
   });
+
+  it('sets adds a bonus frame to the new game', function() {
+    game = new BowlingGame
+    frame = new BowlingFrame
+    game.hold(frame);
+    expect(game.freshFrames[0]).toEqual(new BowlingFrame);
+  });
 });
 
 
