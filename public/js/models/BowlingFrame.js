@@ -11,7 +11,7 @@ var frameWrapper = function(){
   BowlingFrame.prototype.saveRoll = function (pins) {
     this.rolls.push(pins);
     this.leftOver -= pins;
-    this.special()
+    this.special();
   };
 
   BowlingFrame.prototype.special = function () {
@@ -19,20 +19,20 @@ var frameWrapper = function(){
       this.spare = true;
     }else if(this.rolls[0] == 10){
       this.strike = true;
-    };
+    }
   };
 
   BowlingFrame.prototype.frameScore = function () {
-    firstRoll = this.rolls[0] || 0
-    secondRoll = this.rolls[1] || 0
-    this.score = firstRoll + secondRoll + this.bonus
+    firstRoll = this.rolls[0] || 0;
+    secondRoll = this.rolls[1] || 0;
+    this.score = firstRoll + secondRoll + this.bonus;
     return this.score;
   };
 
-  return BowlingFrame
+  return BowlingFrame;
 };
 
 
 angular
   .module('bowling')
-  .factory('BowlingFrame', frameWrapper)
+  .factory('BowlingFrame', frameWrapper);

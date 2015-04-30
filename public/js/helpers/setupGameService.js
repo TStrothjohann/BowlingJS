@@ -5,15 +5,15 @@ var wrapper = function(BowlingGame, BowlingFrame) {
     game = new BowlingGame();
     for (var i = 9; i >= 0; i--) {      
       frames.push(new BowlingFrame());
-    };
+    }
     game.hold(frames);
     game.holdBonusFrame(new BowlingFrame());
 
   };
   setupGame();
-  return game
+  return game;
 };
 
 angular
   .module('bowling')
-  .factory('setupGame', ['BowlingGame', 'BowlingFrame', wrapper])
+  .factory('setupGame', ['BowlingGame', 'BowlingFrame', wrapper]);

@@ -33,9 +33,15 @@ module.exports=function(grunt) {
           }
         }
       }
+    },
+    linter: {  
+            files: [ 
+                'public/js/**/*.js'
+            ],
     }
   });
-
+  
+  grunt.loadNpmTasks('grunt-linter');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.registerTask('default',['jasmine']);
 };

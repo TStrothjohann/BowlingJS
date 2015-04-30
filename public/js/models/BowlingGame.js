@@ -1,6 +1,5 @@
 var wrapper = function(){
   var BowlingGame = function(){
-    this.currentFrame;
     this.scoreCard = [];
     this.freshFrames = [];
     this.bonusFrame = [];
@@ -9,22 +8,22 @@ var wrapper = function(){
   };
 
   BowlingGame.prototype.roll = function(pins) {
-    if(this.isFinal()){this.rollFinal(pins)}
+    if(this.isFinal()){this.rollFinal(pins);}
     else {
-      if(this.currentFrame == undefined){
+      if(this.currentFrame === undefined){
         this.nextFrame();
         this.currentFrame.saveRoll(pins);
-        if(this.isStrike(pins)){this.finishFrame()};
+        if(this.isStrike(pins)){this.finishFrame();}
       }else{
         this.currentFrame.saveRoll(pins);
         this.finishFrame();
-      };
+      }
       this.checkIfOver();
-    };
+    }
   };
 
   BowlingGame.prototype.finishFrame = function() {
-  this.scoreCard.push(this.currentFrame)
+  this.scoreCard.push(this.currentFrame);
   this.currentFrame = undefined;
   this.bonusCalculator();
   this.calculateScore();
@@ -32,10 +31,10 @@ var wrapper = function(){
 
 BowlingGame.prototype.hold = function (frame) {
   if(Array.isArray(frame))
-    {for(i=0; i<frame.length; i++){this.freshFrames.push(frame[i])};
+    {for(i=0; i<frame.length; i++){this.freshFrames.push(frame[i]);}
   }else{
     this.freshFrames.push(frame);
-  };
+  }
 };
 
 BowlingGame.prototype.nextFrame = function () {
@@ -52,68 +51,67 @@ BowlingGame.prototype.holdBonusFrame = function (frame) {
 
 BowlingGame.prototype.checkIfOver = function () {
   index = this.scoreCard.length-1;
-  if(this.freshFrames.length == 0 && this.scoreCard[index].rolls.length == 2){
+  if(this.freshFrames.length === 0 && this.scoreCard[index].rolls.length == 2){
     this.isOver = true;}
 };
 
 BowlingGame.prototype.rollFinal = function (pins) {
   if(this.scoreCard[9].strike){
-    if(this.currentFrame == undefined){
+    if(this.currentFrame === undefined){
       this.nextFrame();
       this.currentFrame.saveRoll(pins);
     }else{
       this.currentFrame.saveRoll(pins);
-      this.finishFrame()
+      this.finishFrame();
       this.isOver = true;
-    };
+    }
   }else{
     this.nextFrame();
     this.currentFrame.saveRoll(pins);
-    this.finishFrame()
+    this.finishFrame();
     this.isOver = true;
-  };
+  }
 };
 
 BowlingGame.prototype.isFinal = function () {
   if(this.scoreCard.length == 10 && this.scoreCard[9].spare){
     this.freshFrames = this.bonusFrame;
-    return true
+    return true;
   }else if(this.scoreCard.length == 10 && this.scoreCard[9].strike){
     this.freshFrames = this.bonusFrame;
-    return true
-  }else{ return false };
+    return true;
+  }else{ return false; }
 };
 
 BowlingGame.prototype.bonusCalculator = function () {
 for(i=1; i<this.scoreCard.length; i++){
-  previous = this.scoreCard[i-1]
-  current = this.scoreCard[i]
-  nextFirstRoll = this.scoreCard[i+1] && this.scoreCard[i+1].rolls[0]
-  secondroll = current.rolls[1]
-    if(previous != undefined && previous.spare == true){
-      previous.bonus = current.rolls[0]
-    };
-    if(previous != undefined && previous.strike == true && secondroll != undefined){
-      previous.bonus = current.rolls[0] + secondroll
-    };
-    if(previous != undefined && previous.strike == true && secondroll == undefined && nextFirstRoll != undefined){
-      previous.bonus = current.rolls[0] + nextFirstRoll
+  previous = this.scoreCard[i-1];
+  current = this.scoreCard[i];
+  nextFirstRoll = this.scoreCard[i+1] && this.scoreCard[i+1].rolls[0];
+  secondroll = current.rolls[1];
+    if(previous !== undefined && previous.spare === true){
+      previous.bonus = current.rolls[0];
+    }
+    if(previous !== undefined && previous.strike === true && secondroll !== undefined){
+      previous.bonus = current.rolls[0] + secondroll;
+    }
+    if(previous !== undefined && previous.strike === true && secondroll === undefined && nextFirstRoll !== undefined){
+      previous.bonus = current.rolls[0] + nextFirstRoll;
 
-    };
+    }
 
-  };
+  }
 };
 
 BowlingGame.prototype.calculateScore = function () {
 this.OverAllScore = 0;
   for (var i = 9; i >= 0; i--) {
-    this.OverAllScore += this.scoreCard[i] && this.scoreCard[i].frameScore() || 0
-  };
+    this.OverAllScore += this.scoreCard[i] && this.scoreCard[i].frameScore() || 0;
+  }
 };
 
   return BowlingGame;
 };
-
 
 angular
   .module('bowling')
