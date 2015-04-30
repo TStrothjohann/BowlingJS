@@ -1,4 +1,4 @@
-frameController = function($scope, setupGame) {
+var frameController = function($scope, setupGame) {
   
   var game = setupGame;
   

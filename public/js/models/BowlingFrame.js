@@ -15,16 +15,16 @@ var frameWrapper = function(){
   };
 
   BowlingFrame.prototype.special = function () {
-    if(this.rolls.length == 2 && this.rolls[0] + this.rolls[1] == 10){
+    if(this.rolls.length === 2 && this.rolls[0] + this.rolls[1] === 10){
       this.spare = true;
-    }else if(this.rolls[0] == 10){
+    }else if(this.rolls[0] === 10){
       this.strike = true;
     }
   };
 
   BowlingFrame.prototype.frameScore = function () {
-    firstRoll = this.rolls[0] || 0;
-    secondRoll = this.rolls[1] || 0;
+    var firstRoll = this.rolls[0] || 0;
+    var secondRoll = this.rolls[1] || 0;
     this.score = firstRoll + secondRoll + this.bonus;
     return this.score;
   };
