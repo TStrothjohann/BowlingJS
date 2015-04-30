@@ -105,20 +105,11 @@ for(i=1; i<this.scoreCard.length; i++){
 };
 
 BowlingGame.prototype.calculateScore = function () {
-framecount0 = this.scoreCard[0] && this.scoreCard[0].frameScore() || 0
-framecount1 = this.scoreCard[1] && this.scoreCard[1].frameScore() || 0
-framecount2 = this.scoreCard[2] && this.scoreCard[2].frameScore() || 0
-framecount3 = this.scoreCard[3] && this.scoreCard[3].frameScore() || 0
-framecount4 = this.scoreCard[4] && this.scoreCard[4].frameScore() || 0
-framecount5 = this.scoreCard[5] && this.scoreCard[5].frameScore() || 0
-framecount6 = this.scoreCard[6] && this.scoreCard[6].frameScore() || 0
-framecount7 = this.scoreCard[7] && this.scoreCard[7].frameScore() || 0
-framecount8 = this.scoreCard[8] && this.scoreCard[8].frameScore() || 0
-framecount9 = this.scoreCard[9] && this.scoreCard[9].frameScore() || 0
-  this.OverAllScore = framecount0 + framecount1 + framecount2 + framecount3 + framecount4 + framecount5 + framecount6 + framecount7 + framecount8 + framecount9
+this.OverAllScore = 0;
+  for (var i = 9; i >= 0; i--) {
+    this.OverAllScore += this.scoreCard[i] && this.scoreCard[i].frameScore() || 0
+  };
 };
-
-
 
   return BowlingGame;
 };
